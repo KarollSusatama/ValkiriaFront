@@ -28,6 +28,14 @@ import ArrowUpward from "@material-ui/icons/ArrowUpward";
 // core components
 import Header from "components/Headers/Header.js";
 
+// Import react-circular-progressbar module and styles
+import {
+  CircularProgressbar,
+  CircularProgressbarWithChildren,
+  buildStyles
+} from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+
 import {
   chartOptions,
   parseOptions,
@@ -162,15 +170,25 @@ function Dashboard() {
               <CardContent>
                 <Box position="relative" height="350px">
                   {userLogin.usertype === 2 ? 
-                    <RadialSeparators
-                      count={31}
-                      style={{
-                        background: "#fff",
-                        width: "2px",
-                        // This needs to be equal to props.strokeWidth
-                        height: `${50}%`
-                      }}
-                    />
+
+                    <CircularProgressbarWithChildren
+                    value={70}
+                    text={`${80}%`}
+                    strokeWidth={10}
+                    styles={{
+                      strokeLinecap: "butt"
+                    }}
+                    >
+                      <RadialSeparators
+                        count={31}
+                        style={{
+                          background: "#fff",
+                          width: "20px",
+                          // This needs to be equal to props.strokeWidth
+                          height: `${8}%`
+                        }}
+                      />
+                    </CircularProgressbarWithChildren>
                     :  
                     <Line
                     data={chartExample1[chartExample1Data]}
