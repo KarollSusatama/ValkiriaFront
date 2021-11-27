@@ -44,6 +44,16 @@ function Dashboard() {
   const theme = useTheme();
   const [activeNav, setActiveNav] = React.useState(1);
   const [chartExample1Data, setChartExample1Data] = React.useState("data1");
+  const users = [{
+    name: 'Admin',
+    usertype: 1
+  },
+  {
+    name: 'Prueba 2',
+    usertype: 2
+  }
+  ]
+  const userLogin = users[1];
 
   if (window.Chart) {
     parseOptions(Chart, chartOptions());
@@ -149,11 +159,19 @@ function Dashboard() {
               ></CardHeader>
               <CardContent>
                 <Box position="relative" height="350px">
-                  <Line
+                  {userLogin.usertype === 1 ? 
+                    <p>Hola soy un usuario normal </p>: 
+                    <Line
                     data={chartExample1[chartExample1Data]}
                     options={chartExample1.options}
                     getDatasetAtEvent={(e) => console.log(e)}
                   />
+                  }
+                  {/* <Line
+                    data={chartExample1[chartExample1Data]}
+                    options={chartExample1.options}
+                    getDatasetAtEvent={(e) => console.log(e)}
+                  /> */}
                 </Box>
               </CardContent>
             </Card>
