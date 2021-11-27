@@ -36,6 +36,8 @@ import {
 } from "variables/charts.js";
 
 import componentStyles from "assets/theme/views/admin/dashboard.js";
+import Cycle from "views/user/Calendar";
+import RadialSeparators from "views/user/Calendar";
 
 const useStyles = makeStyles(componentStyles);
 
@@ -159,8 +161,17 @@ function Dashboard() {
               ></CardHeader>
               <CardContent>
                 <Box position="relative" height="350px">
-                  {userLogin.usertype === 1 ? 
-                    <p>Hola soy un usuario normal </p>: 
+                  {userLogin.usertype === 2 ? 
+                    <RadialSeparators
+                      count={31}
+                      style={{
+                        background: "#fff",
+                        width: "2px",
+                        // This needs to be equal to props.strokeWidth
+                        height: `${50}%`
+                      }}
+                    />
+                    :  
                     <Line
                     data={chartExample1[chartExample1Data]}
                     options={chartExample1.options}
