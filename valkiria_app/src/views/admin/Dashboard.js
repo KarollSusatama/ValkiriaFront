@@ -44,6 +44,7 @@ import {
 import componentStyles from "assets/theme/views/admin/dashboard.js";
 import Cycle from "views/user/Calendar";
 import RadialSeparators from "views/user/Calendar";
+import Question from "views/user/Question";
 
 const useStyles = makeStyles(componentStyles);
 
@@ -61,7 +62,7 @@ function Dashboard() {
     usertype: 2
   }
   ]
-  const userLogin = users[1];
+  const userLogin = users[0];
 
   if (window.Chart) {
     parseOptions(Chart, chartOptions());
@@ -190,11 +191,7 @@ function Dashboard() {
                     </div>
 
                     :
-                    <Line
-                      data={chartExample1[chartExample1Data]}
-                      options={chartExample1.options}
-                      getDatasetAtEvent={(e) => console.log(e)}
-                    />
+                    <p>ddd</p>
                   }
                   {/* <Line
                     data={chartExample1[chartExample1Data]}
@@ -210,10 +207,9 @@ function Dashboard() {
               <CardHeader
                 title={
                   <Box component="span" color={theme.palette.gray[600]}>
-                    Performane
                   </Box>
                 }
-                subheader="Quiero conocerte"
+                subheader={userLogin.usertype === 2 ? "Reportes" : "Pregunta del día"}
                 classes={{ root: classes.cardHeaderRoot }}
                 titleTypographyProps={{
                   component: Box,
@@ -233,20 +229,14 @@ function Dashboard() {
               ></CardHeader>
               <CardContent>
                 <Box position="relative" height="350px">
-                  {/* <Bar
+                {
+                userLogin.usertype === 2 ? 
+                <Question/> : 
+                  <Bar
                     data={chartExample2.data}
                     options={chartExample2.options}
-                  /> */}
-                  <h1>¿Tienes pareja sentimental?</h1>
-
-                  <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
-                    <mat-icon>SÍ</mat-icon>
-                  </button>
-
-                  <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
-                    <mat-icon>NO</mat-icon>
-                  </button>
-
+                  />
+                }
                 </Box>
               </CardContent>
             </Card>
@@ -303,253 +293,11 @@ function Dashboard() {
                 classes={{ root: classes.cardHeaderRoot }}
               ></CardHeader>
               <TableContainer>
-                <Box
-                  component={Table}
-                  alignItems="center"
-                  marginBottom="0!important"
-                >
-                  <TableHead>
-                    <TableRow>
-                      <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootHead,
-                        }}
-                      >
-                        Page name
-                      </TableCell>
-                      <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootHead,
-                        }}
-                      >
-                        Visitors
-                      </TableCell>
-                      <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootHead,
-                        }}
-                      >
-                        Unique users
-                      </TableCell>
-                      <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootHead,
-                        }}
-                      >
-                        Bounce rate
-                      </TableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    <TableRow>
-                      <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootBodyHead,
-                        }}
-                        component="th"
-                        variant="head"
-                        scope="row"
-                      >
-                        /argon/
-                      </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
-                        4,569
-                      </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
-                        340
-                      </TableCell>
-                      <Box
-                        component={TableCell}
-                        className={classes.tableCellRoot}
-                        marginBottom="-2px"
-                      >
-                        <Box
-                          component={ArrowUpward}
-                          width="1rem!important"
-                          height="1rem!important"
-                          marginRight="1rem"
-                          color={theme.palette.success.main}
-                        />
-                        46,53%
-                      </Box>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootBodyHead,
-                        }}
-                        component="th"
-                        variant="head"
-                        scope="row"
-                      >
-                        /argon/index.html
-                      </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
-                        3,985
-                      </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
-                        319
-                      </TableCell>
-                      <Box
-                        component={TableCell}
-                        className={classes.tableCellRoot}
-                        marginBottom="-2px"
-                      >
-                        <Box
-                          component={ArrowDownward}
-                          width="1rem!important"
-                          height="1rem!important"
-                          marginRight="1rem"
-                          color={theme.palette.warning.main}
-                        />
-                        46,53%
-                      </Box>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootBodyHead,
-                        }}
-                        component="th"
-                        variant="head"
-                        scope="row"
-                      >
-                        /argon/charts.html
-                      </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
-                        3,513
-                      </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
-                        294
-                      </TableCell>
-                      <Box
-                        component={TableCell}
-                        className={classes.tableCellRoot}
-                        marginBottom="-2px"
-                      >
-                        <Box
-                          component={ArrowDownward}
-                          width="1rem!important"
-                          height="1rem!important"
-                          marginRight="1rem"
-                          color={theme.palette.warning.main}
-                        />
-                        36,49%
-                      </Box>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootBodyHead,
-                        }}
-                        component="th"
-                        variant="head"
-                        scope="row"
-                      >
-                        /argon/tables.html
-                      </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
-                        2,050
-                      </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
-                        147
-                      </TableCell>
-                      <Box
-                        component={TableCell}
-                        className={classes.tableCellRoot}
-                        marginBottom="-2px"
-                      >
-                        <Box
-                          component={ArrowUpward}
-                          width="1rem!important"
-                          height="1rem!important"
-                          marginRight="1rem"
-                          color={theme.palette.success.main}
-                        />
-                        50,87%
-                      </Box>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootBodyHead +
-                            " " +
-                            classes.borderBottomUnset,
-                        }}
-                        component="th"
-                        variant="head"
-                        scope="row"
-                      >
-                        /argon/profile.html
-                      </TableCell>
-                      <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.borderBottomUnset,
-                        }}
-                      >
-                        1,795
-                      </TableCell>
-                      <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.borderBottomUnset,
-                        }}
-                      >
-                        190
-                      </TableCell>
-                      <Box
-                        component={TableCell}
-                        className={
-                          classes.tableCellRoot +
-                          " " +
-                          classes.borderBottomUnset
-                        }
-                        marginBottom="-2px"
-                      >
-                        <Box
-                          component={ArrowDownward}
-                          width="1rem!important"
-                          height="1rem!important"
-                          marginRight="1rem"
-                          color={theme.palette.error.main}
-                        />
-                        46,53%
-                      </Box>
-                    </TableRow>
-                  </TableBody>
-                </Box>
+              <Line
+                      data={chartExample1[chartExample1Data]}
+                      options={chartExample1.options}
+                      getDatasetAtEvent={(e) => console.log(e)}
+                    />
               </TableContainer>
             </Card>
           </Grid>

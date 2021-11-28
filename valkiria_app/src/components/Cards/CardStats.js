@@ -8,10 +8,11 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import EmojiEvents from "@material-ui/icons/EmojiEvents";
 
 // core components
 import componentStyles from "assets/theme/components/card-stats.js";
-import boxShadows from "assets/theme/box-shadow.js";
+  import boxShadows from "assets/theme/box-shadow.js";
 
 const useStyles = makeStyles(componentStyles);
 
