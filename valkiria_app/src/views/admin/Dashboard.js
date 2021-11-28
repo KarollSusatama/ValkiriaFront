@@ -236,7 +236,7 @@ function Dashboard() {
                 }
 
                 subheader={userLogin.usertype === 2 ? "Pregunta del día"
-                  : "Reporte por localidad"
+                  : "Reporte por tipo de violencia"
                 }
                 classes={{ root: classes.cardHeaderRoot }}
                 titleTypographyProps={{
@@ -298,7 +298,7 @@ function Dashboard() {
                         variant="h3"
                         marginBottom="0!important"
                       >
-                        Page visits
+                        Visitas de usuarias
                       </Box>
                     </Grid>
                     <Grid item xs="auto">

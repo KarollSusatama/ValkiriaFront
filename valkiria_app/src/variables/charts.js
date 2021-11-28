@@ -319,18 +319,18 @@ let chartExample1 = {
   },
   data1: () => {
     return {
-      labels: ["Violencia Física", "Violencia Psicológica", "Violencia Sexual"],
+      labels: ["Ene", "Feb", "Mar","Abr","May","Jun","Jul", "Ago"],
       datasets: [
         {
           label: "Performance",
-          data: [30, 15, 40],
+          data: [30, 15, 40, 20,50,23,15,10],
         },
       ],
     };
   },
   data2: () => {
     return {
-      labels: ["Violencia Física", "Violencia Psicológica", "Violencia Sexual"],
+      labels: ["Ene", "Feb", "Mar"],
       datasets: [
         {
           label: "Performance",

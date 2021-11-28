@@ -117,9 +117,9 @@ export default function AdminNavbar({ brandText }) {
         aria-describedby="parent-modal-description"
       >
         <Box sx={{ ...style, width: 400 }}>
-          <h2 id="parent-modal-title">Si me pide la ubicación para saber donde estoy, ES MALTRATÓ PSICOLÓGICO</h2>
+          <h2 id="parent-modal-title">Si me pide la ubicación frecuentemente para saber dónde estoy, ES MALTRATO PSICOLÓGICO</h2>
           <p id="parent-modal-description">
-            ¿Te ha pasado?
+            ¿Te ha pasado en los últimos tres meses?
           </p>
           <Button variant="outlined">Si</Button>
           
