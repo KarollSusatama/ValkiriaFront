@@ -319,22 +319,22 @@ let chartExample1 = {
   },
   data1: () => {
     return {
-      labels: ["May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      labels: ["Violencia Física", "Violencia Psicológica", "Violencia Sexual"],
       datasets: [
         {
           label: "Performance",
-          data: [0, 20, 10, 30, 15, 40, 20, 60, 60],
+          data: [30, 15, 40],
         },
       ],
     };
   },
   data2: () => {
     return {
-      labels: ["May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      labels: ["Violencia Física", "Violencia Psicológica", "Violencia Sexual"],
       datasets: [
         {
           label: "Performance",
-          data: [0, 20, 5, 25, 10, 30, 15, 40, 40],
+          data: [ 30, 15, 40],
         },
       ],
     };
@@ -374,11 +374,11 @@ let chartExample2 = {
     },
   },
   data: {
-    labels: ["Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    labels: ["Violencia Física", "Violencia Psicológica", "Violencia Sexual"],
     datasets: [
       {
         label: "Sales",
-        data: [25, 20, 30, 22, 17, 29],
+        data: [ 30, 15, 40],
         maxBarThickness: 10,
       },
     ],
