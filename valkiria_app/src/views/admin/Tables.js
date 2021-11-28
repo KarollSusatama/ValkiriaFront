@@ -135,7 +135,7 @@ const Tables = () => {
                         classes.tableCellRoot + " " + classes.tableCellRootHead,
                     }}
                   >
-                    Budget
+                    Tipo de violencia
                   </TableCell>
                   <TableCell
                     classes={{
@@ -336,7 +336,7 @@ const Tables = () => {
                       />
                       <Box display="flex" alignItems="flex-start">
                         <Box fontSize=".875rem" component="span">
-                          Angular Now UI Kit PRO
+                        Ana Fernandez
                         </Box>
                       </Box>
                     </Box>
@@ -942,7 +942,7 @@ const Tables = () => {
                         classes.tableCellRoot + " " + classes.tableCellRootHead,
                     }}
                   >
-                    Project
+                     Nombre
                   </TableCell>
                   <TableCell
                     classes={{
@@ -958,7 +958,7 @@ const Tables = () => {
                         classes.tableCellRoot + " " + classes.tableCellRootHead,
                     }}
                   >
-                    Status
+                    Tipo de agresor
                   </TableCell>
                   <TableCell
                     classes={{
@@ -966,7 +966,7 @@ const Tables = () => {
                         classes.tableCellRoot + " " + classes.tableCellRootHead,
                     }}
                   >
-                    Users
+                    Estado
                   </TableCell>
                   <TableCell
                     classes={{
@@ -974,7 +974,7 @@ const Tables = () => {
                         classes.tableCellRoot + " " + classes.tableCellRootHead,
                     }}
                   >
-                    Completion
+                    Porcentaje de estado
                   </TableCell>
                   <TableCell
                     classes={{
