@@ -17,6 +17,7 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import Email from "@material-ui/icons/Email";
 import Lock from "@material-ui/icons/Lock";
 import School from "@material-ui/icons/School";
+import Pohone from "@material-ui/icons/PhoneAndroid";
 
 // core components
 import componentStyles from "assets/theme/views/auth/register.js";
@@ -39,7 +40,7 @@ function Register() {
                 component="small"
                 color={theme.palette.gray[600]}
               >
-                Sign up with
+                Registrate a Valkiria
               </Box>
             }
             titleTypographyProps={{
@@ -49,50 +50,50 @@ function Register() {
               marginTop: ".5rem!important",
               fontSize: "1rem!important",
             }}
-            subheader={
-              <Box textAlign="center">
-                <Box
-                  component={Button}
-                  variant="contained"
-                  marginRight="2rem!important"
-                  classes={{ root: classes.buttonRoot }}
-                >
-                  <Box component="span" marginRight="4px">
-                    <Box
-                      alt="..."
-                      component="img"
-                      width="20px"
-                      className={classes.buttonImg}
-                      src={
-                        require("assets/img/icons/common/github.svg").default
-                      }
-                    ></Box>
-                  </Box>
-                  <Box component="span" marginLeft=".75rem">
-                    Github
-                  </Box>
-                </Box>
-                <Button
-                  variant="contained"
-                  classes={{ root: classes.buttonRoot }}
-                >
-                  <Box component="span" marginRight="4px">
-                    <Box
-                      alt="..."
-                      component="img"
-                      width="20px"
-                      className={classes.buttonImg}
-                      src={
-                        require("assets/img/icons/common/google.svg").default
-                      }
-                    ></Box>
-                  </Box>
-                  <Box component="span" marginLeft=".75rem">
-                    Google
-                  </Box>
-                </Button>
-              </Box>
-            }
+            // subheader={
+            //   <Box textAlign="center">
+            //     <Box
+            //       component={Button}
+            //       variant="contained"
+            //       marginRight="2rem!important"
+            //       classes={{ root: classes.buttonRoot }}
+            //     >
+            //       <Box component="span" marginRight="4px">
+            //         <Box
+            //           alt="..."
+            //           component="img"
+            //           width="20px"
+            //           className={classes.buttonImg}
+            //           src={
+            //             require("assets/img/icons/common/github.svg").default
+            //           }
+            //         ></Box>
+            //       </Box>
+            //       <Box component="span" marginLeft=".75rem">
+            //         Github
+            //       </Box>
+            //     </Box>
+            //     <Button
+            //       variant="contained"
+            //       classes={{ root: classes.buttonRoot }}
+            //     >
+            //       <Box component="span" marginRight="4px">
+            //         <Box
+            //           alt="..."
+            //           component="img"
+            //           width="20px"
+            //           className={classes.buttonImg}
+            //           src={
+            //             require("assets/img/icons/common/google.svg").default
+            //           }
+            //         ></Box>
+            //       </Box>
+            //       <Box component="span" marginLeft=".75rem">
+            //         Google
+            //       </Box>
+            //     </Button>
+            //   </Box>
+            // }
           ></CardHeader>
           <CardContent classes={{ root: classes.cardContent }}>
             <Box
@@ -103,7 +104,7 @@ function Register() {
               fontSize="1rem"
             >
               <Box fontSize="80%" fontWeight="400" component="small">
-                Or sign up with credentials
+                Escribe tus credenciales
               </Box>
             </Box>
             <FormControl
@@ -115,7 +116,7 @@ function Register() {
               <FilledInput
                 autoComplete="off"
                 type="text"
-                placeholder="Name"
+                placeholder="Nombre"
                 startAdornment={
                   <InputAdornment position="start">
                     <School />
@@ -132,7 +133,7 @@ function Register() {
               <FilledInput
                 autoComplete="off"
                 type="email"
-                placeholder="Email"
+                placeholder="Correo electrónico"
                 startAdornment={
                   <InputAdornment position="start">
                     <Email />
@@ -149,10 +150,27 @@ function Register() {
               <FilledInput
                 autoComplete="off"
                 type="password"
-                placeholder="Password"
+                placeholder="Contraseña"
                 startAdornment={
                   <InputAdornment position="start">
                     <Lock />
+                  </InputAdornment>
+                }
+              />
+            </FormControl>
+            <FormControl
+              variant="filled"
+              component={Box}
+              width="100%"
+              marginBottom="1.5rem!important"
+            >
+              <FilledInput
+                autoComplete="off"
+                type="number"
+                placeholder="Número telefónico"
+                startAdornment={
+                  <InputAdornment position="start">
+                    <Pohone />
                   </InputAdornment>
                 }
               />
@@ -179,13 +197,13 @@ function Register() {
               control={<Checkbox color="primary" />}
               label={
                 <>
-                  I agree with the{" "}
+                  Estoy de acuerdo con {" "}
                   <Box
                     color={theme.palette.primary.main}
                     component="a"
                     textDecoration="none"
                   >
-                    Privacy Policy
+                    la política de privacidad
                   </Box>
                 </>
               }
@@ -197,7 +215,7 @@ function Register() {
             />
             <Box textAlign="center" marginTop="1.5rem" marginBottom="1.5rem">
               <Button color="primary" variant="contained">
-                Create account
+                Crear cuenta
               </Button>
             </Box>
           </CardContent>
