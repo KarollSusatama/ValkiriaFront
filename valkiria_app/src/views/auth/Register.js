@@ -215,7 +215,7 @@ function Register() {
             />
             <Box textAlign="center" marginTop="1.5rem" marginBottom="1.5rem">
               <Button color="primary" variant="contained">
-                Create account
+                Crear cuenta
               </Button>
             </Box>
           </CardContent>

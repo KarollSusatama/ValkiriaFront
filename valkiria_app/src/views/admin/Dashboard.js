@@ -25,16 +25,14 @@ import Typography from "@material-ui/core/Typography";
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
 import ArrowUpward from "@material-ui/icons/ArrowUpward";
 
-// core components
-import Header from "components/Headers/Header.js";
-
-// Import react-circular-progressbar module and styles
 import {
   CircularProgressbar,
   CircularProgressbarWithChildren,
   buildStyles
 } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
+
+// core components
+import Header from "components/Headers/Header.js";
 
 import {
   chartOptions,
@@ -123,7 +121,7 @@ function Dashboard() {
                         marginBottom="0!important"
                       >
                         <Box component="span" color={theme.palette.white.main}>
-                          Sales value
+                          Ciclo Menstrual
                         </Box>
                       </Box>
                     </Grid>
@@ -133,7 +131,7 @@ function Dashboard() {
                         display="flex"
                         flexWrap="wrap"
                       >
-                        <Button
+                        {/* <Button
                           variant="contained"
                           color="primary"
                           component={Box}
@@ -160,7 +158,7 @@ function Dashboard() {
                           }}
                         >
                           Week
-                        </Button>
+                        </Button> */}
                       </Box>
                     </Grid>
                   </Grid>
@@ -169,32 +167,34 @@ function Dashboard() {
               ></CardHeader>
               <CardContent>
                 <Box position="relative" height="350px">
-                  {userLogin.usertype === 2 ? 
+                  {userLogin.usertype === 2 ?
+                    <div style={{ width: "50%", position: "absolute", left: "25%" }} >
+                      <CircularProgressbarWithChildren
+                        value={80}
+                        text=""
+                        strokeWidth={10}
+                        styles={buildStyles({
+                          strokeLinecap: "butt",
+                          width: `${8}%`
+                        })}
+                      // style={{width:"50% !important"}}
+                      >
+                        <RadialSeparators
+                          count={31}
+                          todayDay={5}
+                        />
+                      </CircularProgressbarWithChildren>
+                      <div>
+                        <p>Ovulación</p>
+                      </div>
+                    </div>
 
-                    <CircularProgressbarWithChildren
-                    value={70}
-                    text={`${80}%`}
-                    strokeWidth={10}
-                    styles={{
-                      strokeLinecap: "butt"
-                    }}
-                    >
-                      <RadialSeparators
-                        count={31}
-                        style={{
-                          background: "#fff",
-                          width: "20px",
-                          // This needs to be equal to props.strokeWidth
-                          height: `${8}%`
-                        }}
-                      />
-                    </CircularProgressbarWithChildren>
-                    :  
+                    :
                     <Line
-                    data={chartExample1[chartExample1Data]}
-                    options={chartExample1.options}
-                    getDatasetAtEvent={(e) => console.log(e)}
-                  />
+                      data={chartExample1[chartExample1Data]}
+                      options={chartExample1.options}
+                      getDatasetAtEvent={(e) => console.log(e)}
+                    />
                   }
                   {/* <Line
                     data={chartExample1[chartExample1Data]}
@@ -213,7 +213,7 @@ function Dashboard() {
                     Performane
                   </Box>
                 }
-                subheader="Total orders"
+                subheader="Quiero conocerte"
                 classes={{ root: classes.cardHeaderRoot }}
                 titleTypographyProps={{
                   component: Box,
@@ -233,10 +233,20 @@ function Dashboard() {
               ></CardHeader>
               <CardContent>
                 <Box position="relative" height="350px">
-                  <Bar
+                  {/* <Bar
                     data={chartExample2.data}
                     options={chartExample2.options}
-                  />
+                  /> */}
+                  <h1>¿Tienes pareja sentimental?</h1>
+
+                  <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+                    <mat-icon>SÍ</mat-icon>
+                  </button>
+
+                  <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+                    <mat-icon>NO</mat-icon>
+                  </button>
+
                 </Box>
               </CardContent>
             </Card>
@@ -563,6 +573,7 @@ function Dashboard() {
                       </Box>
                     </Grid>
                     <Grid item xs="auto">
+                      
                       <Box
                         justifyContent="flex-end"
                         display="flex"
