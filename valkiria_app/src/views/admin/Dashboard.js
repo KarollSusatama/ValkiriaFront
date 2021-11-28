@@ -105,6 +105,7 @@ function Dashboard() {
                     alignItems="center"
                     justifyContent="space-between"
                   >
+                    {userLogin.usertype === 2 ?
                     <Grid item xs="auto">
                       <Box
                         component={Typography}
@@ -126,7 +127,29 @@ function Dashboard() {
                           Ciclo Menstrual - Estas en la fase proliferativa (No fertil) 
                         </Box>
                       </Box>
-                    </Grid>
+                    </Grid> :                     <Grid item xs="auto">
+                      <Box
+                        component={Typography}
+                        variant="h6"
+                        letterSpacing=".0625rem"
+                        marginBottom=".25rem!important"
+                        className={classes.textUppercase}
+                      >
+                        <Box component="span" color={theme.palette.gray[400]}>
+                          Mapa
+                        </Box>
+                      </Box>
+                      <Box
+                        component={Typography}
+                        variant="h2"
+                        marginBottom="0!important"
+                      >
+                        <Box component="span" color={theme.palette.white.main}>
+                          Mapa de calor 
+                      
+                        </Box>
+                      </Box>
+                    </Grid>}
                     <Grid item xs="auto">
                       <Box
                         justifyContent="flex-end"
