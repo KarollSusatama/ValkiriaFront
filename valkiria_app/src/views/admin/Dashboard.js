@@ -44,6 +44,7 @@ import {
 import componentStyles from "assets/theme/views/admin/dashboard.js";
 import Cycle from "views/user/Calendar";
 import RadialSeparators from "views/user/Calendar";
+import { QuestionAnswer } from "@material-ui/icons";
 import Question from "views/user/Question";
 
 const useStyles = makeStyles(componentStyles);
@@ -62,7 +63,7 @@ function Dashboard() {
     usertype: 2
   }
   ]
-  const userLogin = users[0];
+  const userLogin = users[1];
 
   if (window.Chart) {
     parseOptions(Chart, chartOptions());
@@ -204,12 +205,20 @@ function Dashboard() {
           </Grid>
           <Grid item xs={12} xl={4}>
             <Card classes={{ root: classes.cardRoot }}>
+
+
+
+
+
               <CardHeader
                 title={
                   <Box component="span" color={theme.palette.gray[600]}>
                   </Box>
                 }
-                subheader={userLogin.usertype === 2 ? "Reportes" : "Pregunta del día"}
+
+                subheader={userLogin.usertype === 2 ? "Pregunta del día"
+                  : "Reporte por localidad"
+                }
                 classes={{ root: classes.cardHeaderRoot }}
                 titleTypographyProps={{
                   component: Box,
