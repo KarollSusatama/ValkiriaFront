@@ -64,7 +64,7 @@ export default function AuthNavbar() {
           height="1.25rem!important"
           marginRight=".5rem!important"
         />
-        Dashboard
+        Inicio
       </ListItem>
       <ListItem
         component={Link}

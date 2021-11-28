@@ -114,7 +114,7 @@ function Dashboard() {
                         className={classes.textUppercase}
                       >
                         <Box component="span" color={theme.palette.gray[400]}>
-                          Overview
+                          Tu ciclo mestrual
                         </Box>
                       </Box>
                       <Box
@@ -123,7 +123,7 @@ function Dashboard() {
                         marginBottom="0!important"
                       >
                         <Box component="span" color={theme.palette.white.main}>
-                          Ciclo Menstrual
+                          Ciclo Menstrual - Estas en la fase proliferativa (No fertil) 
                         </Box>
                       </Box>
                     </Grid>
@@ -182,17 +182,18 @@ function Dashboard() {
                       // style={{width:"50% !important"}}
                       >
                         <RadialSeparators
-                          count={31}
-                          todayDay={5}
+                          count={28}
+                          todayDay={8}
                         />
                       </CircularProgressbarWithChildren>
-                      <div>
-                        <p>Ovulación</p>
-                      </div>
                     </div>
 
                     :
-                    <p>ddd</p>
+                    <Line
+                    data={chartExample1[chartExample1Data]}
+                    options={chartExample1.options}
+                    getDatasetAtEvent={(e) => console.log(e)}
+                  />
                   }
                   {/* <Line
                     data={chartExample1[chartExample1Data]}
@@ -205,11 +206,6 @@ function Dashboard() {
           </Grid>
           <Grid item xs={12} xl={4}>
             <Card classes={{ root: classes.cardRoot }}>
-
-
-
-
-
               <CardHeader
                 title={
                   <Box component="span" color={theme.palette.gray[600]}>

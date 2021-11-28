@@ -38,7 +38,7 @@ function Login() {
                 component="small"
                 color={theme.palette.gray[600]}
               >
-                Sign in with
+                Ingresar con
               </Box>
             }
             titleTypographyProps={{
@@ -50,27 +50,6 @@ function Login() {
             }}
             subheader={
               <Box textAlign="center">
-                <Box
-                  component={Button}
-                  variant="contained"
-                  marginRight=".5rem!important"
-                  classes={{ root: classes.buttonRoot }}
-                >
-                  <Box component="span" marginRight="4px">
-                    <Box
-                      alt="..."
-                      component="img"
-                      width="20px"
-                      className={classes.buttonImg}
-                      src={
-                        require("assets/img/icons/common/github.svg").default
-                      }
-                    ></Box>
-                  </Box>
-                  <Box component="span" marginLeft=".75rem">
-                    Github
-                  </Box>
-                </Box>
                 <Button
                   variant="contained"
                   classes={{ root: classes.buttonRoot }}
@@ -102,7 +81,7 @@ function Login() {
               fontSize="1rem"
             >
               <Box fontSize="80%" fontWeight="400" component="small">
-                Or sign in with credentials
+                Digita tus credenciales
               </Box>
             </Box>
             <FormControl
@@ -114,7 +93,7 @@ function Login() {
               <FilledInput
                 autoComplete="off"
                 type="email"
-                placeholder="Email"
+                placeholder="Correo Electrónico"
                 startAdornment={
                   <InputAdornment position="start">
                     <Email />
@@ -131,7 +110,7 @@ function Login() {
               <FilledInput
                 autoComplete="off"
                 type="password"
-                placeholder="Password"
+                placeholder="Contraseña"
                 startAdornment={
                   <InputAdornment position="start">
                     <Lock />
@@ -142,7 +121,7 @@ function Login() {
             <FormControlLabel
               value="end"
               control={<Checkbox color="primary" />}
-              label="Remeber me"
+              label="Recordar las credenciales"
               labelPlacement="end"
               classes={{
                 root: classes.formControlLabelRoot,
@@ -151,7 +130,7 @@ function Login() {
             />
             <Box textAlign="center" marginTop="1.5rem" marginBottom="1.5rem">
               <Button color="primary" variant="contained">
-                Sign in
+                Ingresar
               </Button>
             </Box>
           </CardContent>
@@ -163,7 +142,7 @@ function Login() {
               onClick={(e) => e.preventDefault()}
               className={classes.footerLinks}
             >
-              Forgot password
+              Olvide mi contraseña
             </a>
           </Grid>
           <Grid item xs={6} component={Box} textAlign="right">
@@ -172,7 +151,7 @@ function Login() {
               onClick={(e) => e.preventDefault()}
               className={classes.footerLinks}
             >
-              Create new account
+              Crear nueva cuenta
             </a>
           </Grid>
         </Grid>

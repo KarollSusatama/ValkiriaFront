@@ -50,7 +50,7 @@ const Header = () => {
                   <Grid item xl={3} lg={6} xs={12}>
                     <CardStats
                       subtitle="Días para la menstruación"
-                      title="20"pp
+                      title="Faltan 20 días"
                       icon={PieChart}
                       color="bgError"
                       footer={
@@ -63,14 +63,6 @@ const Header = () => {
                             display="flex"
                             alignItems="center"
                           >
-                            <Box
-                              // component={ArrowDownward}
-                              width="1.5rem!important"
-                              height="1.5rem!important"
-                            />{" "}
-                            Recuerda tomarte las pastillas de placebo
-                          </Box>
-                          <Box component="span" whiteSpace="nowrap">
                           </Box>
                         </>
                       }
@@ -79,7 +71,7 @@ const Header = () => {
                   <Grid item xl={3} lg={6} xs={12}>
                     <CardStats
                       subtitle="Días no fertiles"
-                      title="2,356"
+                      title="Te quedan 3 días"
                       icon={PieChart}
                       color="bgWarning"
                       footer={
@@ -92,15 +84,6 @@ const Header = () => {
                             display="flex"
                             alignItems="center"
                           >
-                            <Box
-                              component={ArrowDownward}
-                              width="1.5rem!important"
-                              height="1.5rem!important"
-                            />{" "}
-                            3.48%
-                          </Box>
-                          <Box component="span" whiteSpace="nowrap">
-                            Since last week
                           </Box>
                         </>
                       }
@@ -109,7 +92,7 @@ const Header = () => {
                   <Grid item xl={3} lg={6} xs={12}>
                     <CardStats
                       subtitle="Días fertiles"
-                      title="924"
+                      title="Faltan 4 días"
                       icon={GroupAdd}
                       color="bgWarningLight"
                       footer={
@@ -122,15 +105,6 @@ const Header = () => {
                             display="flex"
                             alignItems="center"
                           >
-                            <Box
-                              component={ArrowDownward}
-                              width="1.5rem!important"
-                              height="1.5rem!important"
-                            />{" "}
-                            1.10%
-                          </Box>
-                          <Box component="span" whiteSpace="nowrap">
-                            Since yesterday
                           </Box>
                         </>
                       }
@@ -138,8 +112,7 @@ const Header = () => {
                   </Grid>
                   <Grid item xl={3} lg={6} xs={12}>
                     <CardStats
-                      subtitle="Días fertiles"
-                      title="49,65%"
+                      title="Recuerda tomarte las pastillas de placebo en 20 días"
                       icon={EmojiEvents}
                       color="bgInfo"
                       footer={
@@ -152,15 +125,6 @@ const Header = () => {
                             display="flex"
                             alignItems="center"
                           >
-                            <Box
-                              component={ArrowUpward}
-                              width="1.5rem!important"
-                              height="1.5rem!important"
-                            />{" "}
-                            10%
-                          </Box>
-                          <Box component="span" whiteSpace="nowrap">
-                            Since last month
                           </Box>
                         </>
                       }

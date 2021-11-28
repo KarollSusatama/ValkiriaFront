@@ -20,6 +20,18 @@ import NavbarDropdown from "components/Dropdowns/NavbarDropdown.js";
 import routes from "routes.js";
 
 import componentStyles from "assets/theme/layouts/admin.js";
+import admin_routes from "admin_routes";
+
+const users = [{
+  name: 'Admin',
+  usertype: 1
+},
+{
+  name: 'Prueba 2',
+  usertype: 2
+}
+]
+const userLogin = users[1];
 
 const useStyles = makeStyles(componentStyles);
 
@@ -62,7 +74,8 @@ const Admin = () => {
     <>
       <>
         <Sidebar
-          routes={routes}
+          routes={userLogin.usertype === 2 ? routes : 
+          admin_routes}
           logo={{
             innerLink: "/admin/index",
             imgSrc: require("../assets/img/brand/argon-react.png").default,

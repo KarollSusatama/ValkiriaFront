@@ -68,7 +68,7 @@ function Profile() {
                         variant="h3"
                         marginBottom="0!important"
                       >
-                        My Account
+                        Mi cuenta
                       </Box>
                     </Grid>
                     <Grid item xs="auto">
@@ -77,13 +77,6 @@ function Profile() {
                         display="flex"
                         flexWrap="wrap"
                       >
-                        <Button
-                          variant="contained"
-                          color="primary"
-                          size="small"
-                        >
-                          Settings
-                        </Button>
                       </Box>
                     </Grid>
                   </Grid>
@@ -102,13 +95,13 @@ function Profile() {
                   marginBottom="1.5rem!important"
                   classes={{ root: classes.typographyRootH6 }}
                 >
-                  User Information
+                  Información personal
                 </Box>
                 <div className={classes.plLg4}>
                   <Grid container>
                     <Grid item xs={12} lg={6}>
                       <FormGroup>
-                        <FormLabel>Username</FormLabel>
+                        <FormLabel>Nombre</FormLabel>
                         <FormControl
                           variant="filled"
                           component={Box}
@@ -121,14 +114,14 @@ function Profile() {
                             component={FilledInput}
                             autoComplete="off"
                             type="text"
-                            defaultValue="lucky.jesse"
+                            defaultValue="Jessica Jones"
                           />
                         </FormControl>
                       </FormGroup>
                     </Grid>
                     <Grid item xs={12} lg={6}>
                       <FormGroup>
-                        <FormLabel>Email</FormLabel>
+                        <FormLabel>Correo Electronico</FormLabel>
                         <FormControl
                           variant="filled"
                           component={Box}
@@ -141,7 +134,7 @@ function Profile() {
                             component={FilledInput}
                             autoComplete="off"
                             type="email"
-                            placeholder="jesse@example.com"
+                            defaultValue="jesse@gmail.com"
                           />
                         </FormControl>
                       </FormGroup>
@@ -150,7 +143,7 @@ function Profile() {
                   <Grid container>
                     <Grid item xs={12} lg={6}>
                       <FormGroup>
-                        <FormLabel>First name</FormLabel>
+                        <FormLabel>Número telefónico</FormLabel>
                         <FormControl
                           variant="filled"
                           component={Box}
@@ -162,15 +155,15 @@ function Profile() {
                             paddingRight="0.75rem"
                             component={FilledInput}
                             autoComplete="off"
-                            type="text"
-                            defaultValue="Lucky"
+                            type="number"
+                            defaultValue="3197978806"
                           />
                         </FormControl>
                       </FormGroup>
                     </Grid>
                     <Grid item xs={12} lg={6}>
                       <FormGroup>
-                        <FormLabel>Last Name</FormLabel>
+                        <FormLabel>Cambiar Contraseña</FormLabel>
                         <FormControl
                           variant="filled"
                           component={Box}
@@ -182,7 +175,7 @@ function Profile() {
                             paddingRight="0.75rem"
                             component={FilledInput}
                             autoComplete="off"
-                            type="text"
+                            type="password"
                             defaultValue="Jesse"
                           />
                         </FormControl>
@@ -206,13 +199,13 @@ function Profile() {
                   marginBottom="1.5rem!important"
                   classes={{ root: classes.typographyRootH6 }}
                 >
-                  Contact Information
+                  Información de contacto
                 </Box>
                 <div className={classes.plLg4}>
                   <Grid container>
                     <Grid item xs={12}>
                       <FormGroup>
-                        <FormLabel>Address</FormLabel>
+                        <FormLabel>Dirección</FormLabel>
                         <FormControl
                           variant="filled"
                           component={Box}
@@ -225,7 +218,7 @@ function Profile() {
                             component={FilledInput}
                             autoComplete="off"
                             type="text"
-                            defaultValue="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
+                            defaultValue="Calle 30 #29-29, Ap 09"
                           />
                         </FormControl>
                       </FormGroup>
@@ -234,7 +227,7 @@ function Profile() {
                   <Grid container>
                     <Grid item xs={12} lg={4}>
                       <FormGroup>
-                        <FormLabel>City</FormLabel>
+                        <FormLabel>Ciudad</FormLabel>
                         <FormControl
                           variant="filled"
                           component={Box}
@@ -247,14 +240,14 @@ function Profile() {
                             component={FilledInput}
                             autoComplete="off"
                             type="text"
-                            defaultValue="New York"
+                            defaultValue="Bogotá"
                           />
                         </FormControl>
                       </FormGroup>
                     </Grid>
                     <Grid item xs={12} lg={4}>
                       <FormGroup>
-                        <FormLabel>Country</FormLabel>
+                        <FormLabel>Departamento</FormLabel>
                         <FormControl
                           variant="filled"
                           component={Box}
@@ -267,14 +260,14 @@ function Profile() {
                             component={FilledInput}
                             autoComplete="off"
                             type="text"
-                            defaultValue="United States"
+                            defaultValue="Bogotá"
                           />
                         </FormControl>
                       </FormGroup>
                     </Grid>
                     <Grid item xs={12} lg={4}>
                       <FormGroup>
-                        <FormLabel>Postal code</FormLabel>
+                        <FormLabel>PCódigo postal</FormLabel>
                         <FormControl
                           variant="filled"
                           component={Box}
@@ -287,7 +280,7 @@ function Profile() {
                             component={FilledInput}
                             autoComplete="off"
                             type="text"
-                            placeholder="Postal code"
+                            defaultValue="11111"
                           />
                         </FormControl>
                       </FormGroup>
@@ -310,13 +303,13 @@ function Profile() {
                   marginBottom="1.5rem!important"
                   classes={{ root: classes.typographyRootH6 }}
                 >
-                  About me
+                  Información sobre Jessica
                 </Box>
                 <div className={classes.plLg4}>
                   <Grid container>
                     <Grid item xs={12}>
                       <FormGroup>
-                        <FormLabel>About me</FormLabel>
+                        <FormLabel>Información</FormLabel>
                         <FormControl
                           variant="filled"
                           component={Box}
@@ -329,7 +322,7 @@ function Profile() {
                             component={FilledInput}
                             autoComplete="off"
                             multiline
-                            defaultValue="A beautiful Dashboard for Bootstrap 4. It is Free and Open Source."
+                            defaultValue="Tiene pareja actualmente, Vive sola, Cuenta con empleo actualmente"
                             rows="4"
                           />
                         </FormControl>
@@ -375,24 +368,6 @@ function Profile() {
                 paddingBottom="0!important"
                 paddingTop="8rem!important"
                 classes={{ root: classes.cardHeaderRootProfile }}
-                subheader={
-                  <Box display="flex" justifyContent="space-between">
-                    <Button
-                      variant="contained"
-                      size="small"
-                      classes={{ root: classes.buttonRootInfo }}
-                    >
-                      Connect
-                    </Button>
-                    <Button
-                      variant="contained"
-                      size="small"
-                      classes={{ root: classes.buttonRootDark }}
-                    >
-                      Message
-                    </Button>
-                  </Box>
-                }
               ></Box>
               <Box
                 component={CardContent}
@@ -400,80 +375,9 @@ function Profile() {
                 paddingTop="0!important"
               >
                 <Grid container>
-                  <Grid item xs={12}>
-                    <Box
-                      padding="1rem 0"
-                      justifyContent="center"
-                      display="flex"
-                      className={classes.mtMd5}
-                    >
-                      <Box
-                        textAlign="center"
-                        marginRight="1rem"
-                        padding=".875rem"
-                      >
-                        <Box
-                          component="span"
-                          fontSize="1.1rem"
-                          fontWeight="700"
-                          display="block"
-                          letterSpacing=".025em"
-                          className={classes.typographyRootH6}
-                        >
-                          22
-                        </Box>
-                        <Box
-                          component="span"
-                          fontSize=".875rem"
-                          color={theme.palette.gray[500]}
-                        >
-                          Friends
-                        </Box>
-                      </Box>
-                      <Box
-                        textAlign="center"
-                        marginRight="1rem"
-                        padding=".875rem"
-                      >
-                        <Box
-                          component="span"
-                          fontSize="1.1rem"
-                          fontWeight="700"
-                          display="block"
-                          letterSpacing=".025em"
-                          className={classes.typographyRootH6}
-                        >
-                          10
-                        </Box>
-                        <Box
-                          component="span"
-                          fontSize=".875rem"
-                          color={theme.palette.gray[500]}
-                        >
-                          Photos
-                        </Box>
-                      </Box>
-                      <Box textAlign="center" padding=".875rem">
-                        <Box
-                          component="span"
-                          fontSize="1.1rem"
-                          fontWeight="700"
-                          display="block"
-                          letterSpacing=".025em"
-                          className={classes.typographyRootH6}
-                        >
-                          89
-                        </Box>
-                        <Box
-                          component="span"
-                          fontSize=".875rem"
-                          color={theme.palette.gray[500]}
-                        >
-                          Comments
-                        </Box>
-                      </Box>
-                    </Box>
-                  </Grid>
+                  <br></br>
+                  <br></br>
+                  <br></br>
                 </Grid>
                 <Box textAlign="center">
                   <Typography variant="h3">
@@ -495,52 +399,21 @@ function Profile() {
                       width="1.25rem!important"
                       height="1.25rem!important"
                     ></Box>
-                    Bucharest, Romania
+                    Bogotá, Colombia
                   </Box>
-                  <Box
-                    component={Typography}
-                    variant="h5"
-                    marginTop="3rem!important"
-                  >
-                    Solution Manager - Creative Tim Officer
-                  </Box>
+                  
                   <Box
                     display="flex"
                     alignItems="center"
                     justifyContent="center"
                     fontSize="1rem"
                   >
-                    <Box
-                      component={School}
-                      width="1.25rem!important"
-                      height="1.25rem!important"
-                      marginRight=".5rem"
-                    ></Box>
-                    University of Computer Science
                   </Box>
                   <Box
                     component={Divider}
                     marginTop="1.5rem!important"
                     marginBottom="1.5rem!important"
                   ></Box>
-                  <Box
-                    component="p"
-                    fontWeight="300"
-                    lineHeight="1.7"
-                    marginBottom="1rem"
-                    fontSize="1rem"
-                  >
-                    Ryan — the name taken by Melbourne-raised, Brooklyn-based
-                    Nick Murphy — writes, performs and records all of his own
-                    music.
-                  </Box>
-                  <a
-                    href="#mui"
-                    className={classes.cardProfileLink}
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    Show More
-                  </a>
                 </Box>
               </Box>
             </Card>

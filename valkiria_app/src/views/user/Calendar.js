@@ -11,28 +11,44 @@ function Cycle(props) {
         left: `${50}%`
       }}
     >
-      <div style={props.style} />
+      <div style={props.style}>
+        <strong style = {{
+          color: 'white',
+          position:"absolute",
+          left:`${props.index<10 ?"25%":"9%"}`,
+          size:"12px"
+        }}>{props.index+1}</strong>
+      </div>
     </div>
   );
 }
 
 function RadialSeparators(props) {
   const turns = 1 / props.count;
-  console.log(props.count);
-  console.log(turns);
+
   const days = props.todayDay;
   return _.range(props.count).map(index => {
+    let color= "green";
+    if(index<5){
+      color = "orange"
+
+    }else if(index>10 && index<16){
+      color = "violet"
+
+    }else if((index+1) === days){
+      color = "blue"
+    }
+    
     const styles = 
     {
       background: "#fff",
       width: "20px",
       // This needs to be equal to props.strokeWidth
       height: `${8}%`,
-      backgroundColor:`${index<days?"red":"white"}`
+      backgroundColor:`${color}`
     }
-    console.log(styles);
     return (
-      <Cycle key={index} turns={index * turns} style={styles} />
+      <Cycle key={index} turns={index * turns} style={styles} index={index} />
     )
   } );
 }

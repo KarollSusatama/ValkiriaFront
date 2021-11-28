@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied';
 // import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
 // import SentimentNeutralIcon from '@mui/icons-material/SentimentNeutral';
@@ -17,13 +17,30 @@ function Question() {
     const theme = useTheme();
     const classes = useStyles();
 
+    const preguntas = [
+        "¿Cómo está tu estado de animo hoy?",
+        "¿Tienes una pareja sentimental actualmente?",
+        "¿Actualmente Trabajas?"
+    ]
+    const [numPregunta, setNumPregunta] = useState(0);
+    const changeQuestion = ()=> {
+        console.log(preguntas.length);
+        console.log(numPregunta);
+        console.log(numPregunta > preguntas.length);
+        if(numPregunta === preguntas.length -1){
+            setNumPregunta(0)
+        }else{
+            setNumPregunta(numPregunta+1)
+        }
+        
+    }
     return (
         <div>
-            <p>¿Cómo está tu estado de animo hoy?</p>
+            <h1>{preguntas[numPregunta]}</h1>
             <div style={{position:"absolute",left:"25%"}}>
 
 
-                <Link>
+                <Link onClick={changeQuestion}>
 
                     <Box
                         width="3rem"
@@ -66,7 +83,7 @@ function Question() {
 
                 </Box>
 
-                <Link>
+                <Link onClick={changeQuestion}>
 
                     <Box
                         width="3rem"

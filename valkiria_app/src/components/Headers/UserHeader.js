@@ -49,7 +49,7 @@ const UserHeader = () => {
                 variant="h1"
                 classes={{ root: classes.typographyRootH1 }}
               >
-                Hello Jesse
+                Hola Jessica Jones
               </Typography>
               <Box
                 component="p"
@@ -58,15 +58,8 @@ const UserHeader = () => {
                 lineHeight="1.7"
                 fontSize="1rem"
               >
-                This is your profile page. You can see the progress you've made
-                with your work and manage your projects or assigned tasks
+                Bienvenida a Valkiria una aplicación que te brinda un entorno seguro y confiable. Estos son tus datos personales
               </Box>
-              <Button
-                variant="contained"
-                classes={{ root: classes.buttonRoot }}
-              >
-                Edit profile
-              </Button>
             </Grid>
           </Grid>
         </Container>
