@@ -63,7 +63,7 @@ function Dashboard() {
     usertype: 2
   }
   ]
-  const userLogin = users[1];
+  const userLogin = users[0];
 
   if (window.Chart) {
     parseOptions(Chart, chartOptions());
