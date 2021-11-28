@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useLocation, Route, Switch, Redirect } from "react-router-dom";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -20,22 +20,32 @@ import NavbarDropdown from "components/Dropdowns/NavbarDropdown.js";
 import routes from "routes.js";
 
 import componentStyles from "assets/theme/layouts/admin.js";
-import admin_routes from "admin_routes";
+import admin_routes from "admin_routes.js";
 
-const users = [{
-  name: 'Admin',
-  usertype: 1
-},
-{
-  name: 'Prueba 2',
-  usertype: 2
-}
-]
-const userLogin = users[0];
 
 const useStyles = makeStyles(componentStyles);
 
-const Admin = () => {
+const Admin = (props) => {
+
+  const [num,setNum] = useState(0);
+  const users = [{
+    name: 'Admin',
+    usertype: 1
+  },
+  {
+    name: 'Prueba 2',
+    usertype: 2
+  }
+  ]
+
+
+  const changeUser = (user)=>{
+    console.log("usuario cambiado ",user);
+
+    
+  }
+  const userLogin = users[num];
+
   const classes = useStyles();
   const location = useLocation();
 
@@ -48,11 +58,13 @@ const Admin = () => {
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
       if (prop.layout === "/admin") {
+        console.log(prop);
         return (
           <Route
             path={prop.layout + prop.path}
             component={prop.component}
             key={key}
+
           />
         );
       } else {
@@ -67,7 +79,7 @@ const Admin = () => {
         return routes[i].name;
       }
     }
-    return "Brand";
+    return "INICIO";
   };
 
   return (
@@ -77,9 +89,10 @@ const Admin = () => {
           routes={userLogin.usertype === 2 ? routes : 
           admin_routes}
           logo={{
-            innerLink: "/admin/index",
+            innerLink: "/admin/index/"+num,
             imgSrc: require("../assets/img/brand/argon-react.png").default,
             imgAlt: "...",
+            width:"12px"
           }}
           dropdown={<NavbarDropdown />}
           input={
@@ -105,10 +118,16 @@ const Admin = () => {
           }
         />
         <Box position="relative" className={classes.mainContent}>
-          <AdminNavbar brandText={getBrandText(location.pathname)} />
+          <AdminNavbar brandText={getBrandText(location.pathname)} numUser={changeUser} />
           <Switch>
-            {getRoutes(routes)}
-            <Redirect from="*" to="/admin/index" />
+            {
+            // console.log(userLogin.usertype===1?routes:admin_routes)
+            // getRoutes(admin_routes)
+            getRoutes(admin_routes)
+
+            /* {getRoutes(userLogin.usertype === 2 ? routes : 
+          admin_routes)} */}
+            <Redirect from="*" to={"/admin/index/"+num} />
           </Switch>
           <Container
             maxWidth={false}

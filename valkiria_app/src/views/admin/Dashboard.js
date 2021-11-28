@@ -24,7 +24,8 @@ import Typography from "@material-ui/core/Typography";
 // @material-ui/icons components
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
 import ArrowUpward from "@material-ui/icons/ArrowUpward";
-
+import ciclo from "../../assets/img/theme/ciclo.png"
+import mapa from "../../assets/img/theme/map.png"
 import {
   CircularProgressbar,
   CircularProgressbarWithChildren,
@@ -46,10 +47,14 @@ import Cycle from "views/user/Calendar";
 import RadialSeparators from "views/user/Calendar";
 import { QuestionAnswer } from "@material-ui/icons";
 import Question from "views/user/Question";
+import MapGrafic from "./MapGrafic";
+import Maps from "./Maps";
 
 const useStyles = makeStyles(componentStyles);
 
-function Dashboard() {
+function Dashboard(props) {
+  let num =props.match.params.user_id
+  console.log();
   const classes = useStyles();
   const theme = useTheme();
   const [activeNav, setActiveNav] = React.useState(1);
@@ -63,7 +68,7 @@ function Dashboard() {
     usertype: 2
   }
   ]
-  const userLogin = users[0];
+  const userLogin = users[num];
 
   if (window.Chart) {
     parseOptions(Chart, chartOptions());
@@ -75,7 +80,7 @@ function Dashboard() {
   };
   return (
     <>
-      <Header />
+      <Header user={userLogin}/>
       {/* Page content */}
       <Container
         maxWidth={false}
@@ -97,9 +102,42 @@ function Dashboard() {
                 root: classes.cardRoot + " " + classes.cardRootBgGradient,
               }}
             >
-              <CardHeader
-                subheader={
-                  <Grid
+              
+              <CardContent style={{backgroundColor:"white"}}>
+                <Box position="relative" height="350px">
+                  {userLogin.usertype === 2 ?
+                    <div  >
+                      <img className="" src={ciclo} style={{width:"100%",height:"100%"}}/>
+                      {/* <CircularProgressbarWithChildren
+                        value={80}
+                        text=""
+                        strokeWidth={10}
+                        styles={buildStyles({
+                          strokeLinecap: "butt",
+                          width: `${8}%`
+                        })}
+                      // style={{width:"50% !important"}}
+                      >
+                        <RadialSeparators
+                          count={28}
+                          todayDay={8}
+                        />
+                      </CircularProgressbarWithChildren> */}
+                    </div>
+
+                    :
+                      // <MapGrafic />
+                      // <Maps/>
+                      <img src={mapa} style={{width:"100%",height:"100%"}} />
+                  }
+                  {/* <Line
+                    data={chartExample1[chartExample1Data]}
+                    options={chartExample1.options}
+                    getDatasetAtEvent={(e) => console.log(e)}
+                  /> */}
+                </Box>
+                <Box>
+                <Grid
                     container
                     component={Box}
                     alignItems="center"
@@ -127,7 +165,8 @@ function Dashboard() {
                           Ciclo Menstrual - Estas en la fase proliferativa (No fertil) 
                         </Box>
                       </Box>
-                    </Grid> :                     <Grid item xs="auto">
+                    </Grid> :
+                    <Grid item xs="auto">
                       <Box
                         component={Typography}
                         variant="h6"
@@ -136,7 +175,7 @@ function Dashboard() {
                         className={classes.textUppercase}
                       >
                         <Box component="span" color={theme.palette.gray[400]}>
-                          Mapa
+                          Mapa Coroplético
                         </Box>
                       </Box>
                       <Box
@@ -145,7 +184,7 @@ function Dashboard() {
                         marginBottom="0!important"
                       >
                         <Box component="span" color={theme.palette.white.main}>
-                          Mapa de calor 
+                        Mapa Coroplético
                       
                         </Box>
                       </Box>
@@ -187,44 +226,9 @@ function Dashboard() {
                       </Box>
                     </Grid>
                   </Grid>
-                }
-                classes={{ root: classes.cardHeaderRoot }}
-              ></CardHeader>
-              <CardContent>
-                <Box position="relative" height="350px">
-                  {userLogin.usertype === 2 ?
-                    <div style={{ width: "50%", position: "absolute", left: "25%" }} >
-                      <CircularProgressbarWithChildren
-                        value={80}
-                        text=""
-                        strokeWidth={10}
-                        styles={buildStyles({
-                          strokeLinecap: "butt",
-                          width: `${8}%`
-                        })}
-                      // style={{width:"50% !important"}}
-                      >
-                        <RadialSeparators
-                          count={28}
-                          todayDay={8}
-                        />
-                      </CircularProgressbarWithChildren>
-                    </div>
-
-                    :
-                    <Line
-                    data={chartExample1[chartExample1Data]}
-                    options={chartExample1.options}
-                    getDatasetAtEvent={(e) => console.log(e)}
-                  />
-                  }
-                  {/* <Line
-                    data={chartExample1[chartExample1Data]}
-                    options={chartExample1.options}
-                    getDatasetAtEvent={(e) => console.log(e)}
-                  /> */}
                 </Box>
               </CardContent>
+              
             </Card>
           </Grid>
           <Grid item xs={12} xl={4}>
@@ -279,7 +283,9 @@ function Dashboard() {
             marginBottom="3rem!important"
             classes={{ root: classes.gridItemRoot }}
           >
-            <Card
+            {
+              userLogin.usertype !== 2?
+              <Card
               classes={{
                 root: classes.cardRoot,
               }}
@@ -327,281 +333,14 @@ function Dashboard() {
                       getDatasetAtEvent={(e) => console.log(e)}
                     />
               </TableContainer>
-            </Card>
+            </Card>  
+              :
+              ""
+            }
+            
           </Grid>
           <Grid item xs={12} xl={4}>
-            <Card classes={{ root: classes.cardRoot }}>
-              <CardHeader
-                subheader={
-                  <Grid
-                    container
-                    component={Box}
-                    alignItems="center"
-                    justifyContent="space-between"
-                  >
-                    <Grid item xs="auto">
-                      <Box
-                        component={Typography}
-                        variant="h3"
-                        marginBottom="0!important"
-                      >
-                        Social traffic
-                      </Box>
-                    </Grid>
-                    <Grid item xs="auto">
-                      
-                      <Box
-                        justifyContent="flex-end"
-                        display="flex"
-                        flexWrap="wrap"
-                      >
-                        <Button
-                          variant="contained"
-                          color="primary"
-                          size="small"
-                        >
-                          See all
-                        </Button>
-                      </Box>
-                    </Grid>
-                  </Grid>
-                }
-                classes={{ root: classes.cardHeaderRoot }}
-              ></CardHeader>
-              <TableContainer>
-                <Box
-                  component={Table}
-                  alignItems="center"
-                  marginBottom="0!important"
-                >
-                  <TableHead>
-                    <TableRow>
-                      <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootHead,
-                        }}
-                      >
-                        Refferal
-                      </TableCell>
-                      <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootHead,
-                        }}
-                      >
-                        Visitors
-                      </TableCell>
-                      <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootHead,
-                        }}
-                      ></TableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    <TableRow>
-                      <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootBodyHead,
-                        }}
-                        component="th"
-                        variant="head"
-                        scope="row"
-                      >
-                        Facebook
-                      </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
-                        1,480
-                      </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
-                        <Box display="flex" alignItems="center">
-                          <Box component="span" marginRight=".5rem">
-                            60%
-                          </Box>
-                          <Box width="100%">
-                            <LinearProgress
-                              variant="determinate"
-                              value={60}
-                              classes={{
-                                root: classes.linearProgressRoot,
-                                bar: classes.bgGradientError,
-                              }}
-                            />
-                          </Box>
-                        </Box>
-                      </TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootBodyHead,
-                        }}
-                        component="th"
-                        variant="head"
-                        scope="row"
-                      >
-                        Facebook
-                      </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
-                        5,480
-                      </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
-                        <Box display="flex" alignItems="center">
-                          <Box component="span" marginRight=".5rem">
-                            70%
-                          </Box>
-                          <Box width="100%">
-                            <LinearProgress
-                              variant="determinate"
-                              value={70}
-                              classes={{
-                                root: classes.linearProgressRoot,
-                                bar: classes.bgGradientSuccess,
-                              }}
-                            />
-                          </Box>
-                        </Box>
-                      </TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootBodyHead,
-                        }}
-                        component="th"
-                        variant="head"
-                        scope="row"
-                      >
-                        Google
-                      </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
-                        4,807
-                      </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
-                        <Box display="flex" alignItems="center">
-                          <Box component="span" marginRight=".5rem">
-                            80%
-                          </Box>
-                          <Box width="100%">
-                            <LinearProgress
-                              variant="determinate"
-                              value={80}
-                              classes={{
-                                root: classes.linearProgressRoot,
-                                bar: classes.bgGradientPrimary,
-                              }}
-                            />
-                          </Box>
-                        </Box>
-                      </TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootBodyHead,
-                        }}
-                        component="th"
-                        variant="head"
-                        scope="row"
-                      >
-                        Instagram
-                      </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
-                        3,678
-                      </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
-                        <Box display="flex" alignItems="center">
-                          <Box component="span" marginRight=".5rem">
-                            75%
-                          </Box>
-                          <Box width="100%">
-                            <LinearProgress
-                              variant="determinate"
-                              value={75}
-                              classes={{
-                                root: classes.linearProgressRoot,
-                                bar: classes.bgGradientInfo,
-                              }}
-                            />
-                          </Box>
-                        </Box>
-                      </TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootBodyHead +
-                            " " +
-                            classes.borderBottomUnset,
-                        }}
-                        component="th"
-                        variant="head"
-                        scope="row"
-                      >
-                        twitter
-                      </TableCell>
-                      <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.borderBottomUnset,
-                        }}
-                      >
-                        2,645
-                      </TableCell>
-                      <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.borderBottomUnset,
-                        }}
-                      >
-                        <Box display="flex" alignItems="center">
-                          <Box component="span" marginRight=".5rem">
-                            30%
-                          </Box>
-                          <Box width="100%">
-                            <LinearProgress
-                              variant="determinate"
-                              value={30}
-                              classes={{
-                                root: classes.linearProgressRoot,
-                                bar: classes.bgGradientWarning,
-                              }}
-                            />
-                          </Box>
-                        </Box>
-                      </TableCell>
-                    </TableRow>
-                  </TableBody>
-                </Box>
-              </TableContainer>
-            </Card>
+            
           </Grid>
         </Grid>
       </Container>

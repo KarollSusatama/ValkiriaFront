@@ -115,7 +115,6 @@ const Maps = () => {
   const classes = useStyles();
   return (
     <>
-      <Header />
       {/* Page content */}
       <Container
         maxWidth={false}

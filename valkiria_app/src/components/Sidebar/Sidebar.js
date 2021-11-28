@@ -23,7 +23,9 @@ import componentStyles from "assets/theme/components/sidebar.js";
 
 const useStyles = makeStyles(componentStyles);
 
-export default function Sidebar({ routes, logo, dropdown, input }) {
+export default function Sidebar(props) {
+  console.log("sss",props);
+  // { routes, logo, dropdown, input }
   const classes = useStyles();
   const location = useLocation();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -125,15 +127,15 @@ export default function Sidebar({ routes, logo, dropdown, input }) {
     });
   };
   let logoImage = (
-    <img alt={logo.imgAlt} className={classes.logoClasses} src={logo.imgSrc} />
+    <img alt={props.logo.imgAlt} className={classes.logoClasses} src={props.logo.imgSrc} style={{width:"50%",height:"50%"}}/>
   );
   let logoObject =
-    logo && logo.innerLink ? (
-      <Link to={logo.innerLink} className={classes.logoLinkClasses}>
+    props.logo && props.logo.innerLink ? (
+      <Link to={props.logo.innerLink} className={classes.logoLinkClasses}>
         {logoImage}
       </Link>
-    ) : logo && logo.outterLink ? (
-      <a href={logo.outterLink} className={classes.logoLinkClasses}>
+    ) : props.logo && props.logo.outterLink ? (
+      <a href={props.logo.outterLink} className={classes.logoLinkClasses}>
         {logoImage}
       </a>
     ) : null;
@@ -141,9 +143,9 @@ export default function Sidebar({ routes, logo, dropdown, input }) {
     <>
       <Hidden smDown implementation="css">
         <Drawer variant="permanent" anchor="left" open>
-          <Box paddingBottom="1rem">{logoObject}</Box>
+          <Box paddingBottom="1rem" style={{height:"25%"}}>{logoObject}</Box>
           <List classes={{ root: classes.listRoot }}>
-            {createLinks(routes)}
+            {createLinks(props.routes)}
           </List>
         </Drawer>
       </Hidden>
@@ -169,7 +171,7 @@ export default function Sidebar({ routes, logo, dropdown, input }) {
                 onClick={handleMenuOpen}
               />
               {logoObject}
-              {dropdown}
+              {props.dropdown}
             </Container>
           </Toolbar>
         </AppBar>
@@ -209,10 +211,10 @@ export default function Sidebar({ routes, logo, dropdown, input }) {
             marginRight="1.25rem!important"
           />
           <Box paddingLeft="1.25rem" paddingRight="1.25rem">
-            {input}
+            {props.input}
           </Box>
           <List classes={{ root: classes.listRoot }}>
-            {createLinks(routes)}
+            {createLinks(props.routes)}
           </List>
         </Menu>
       </Hidden>

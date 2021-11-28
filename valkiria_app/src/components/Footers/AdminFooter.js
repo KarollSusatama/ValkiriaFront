@@ -34,7 +34,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               target="_blank"
             >
-              Creative Tim
+              Valkiria app
             </a>
           </div>
         </Box>
@@ -62,7 +62,7 @@ const Footer = () => {
                 root: classes.listItemRoot,
               }}
             >
-              Creative Tim
+              Hackaton 3.0
             </ListItem>
 
             <ListItem

@@ -37,6 +37,7 @@ function Question() {
     return (
         <div>
             <h1>{preguntas[numPregunta]}</h1>
+            
             <div style={{position:"absolute",left:"25%"}}>
 
 

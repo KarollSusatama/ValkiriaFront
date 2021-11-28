@@ -33,7 +33,19 @@ import componentStyles from "assets/theme/views/admin/tables.js";
 
 const useStyles = makeStyles(componentStyles);
 
-const Tables = () => {
+const Tables = (props) => {
+  let num =props.match.params.user_id
+  const users = [{
+    name: 'Admin',
+    usertype: 1
+  },
+  {
+    name: 'Prueba 2',
+    usertype: 2
+  }
+  ]
+  const userLogin = users[num];
+
   const classes = useStyles();
   const theme = useTheme();
   const [anchorEl1, setAnchorEl1] = React.useState(null);
@@ -95,7 +107,7 @@ const Tables = () => {
   };
   return (
     <>
-      <Header />
+      <Header user={userLogin} />
       {/* Page content */}
       <Container
         maxWidth={false}

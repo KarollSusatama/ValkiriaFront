@@ -22,6 +22,7 @@ const componentStyles = (theme) => ({
       paddingLeft: "39px",
       paddingRight: "39px",
     },
+    backgroundColor: "initial!important",
   },
   buttonRootUnselected: {
     background: theme.palette.white.main + "!important",

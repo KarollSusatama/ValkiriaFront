@@ -21,7 +21,7 @@ import VpnKey from "@material-ui/icons/VpnKey";
 var routes = [
   
   {
-    path: "/index",
+    path: "/index/:user_id",
     name: "Inicio",
     icon: Tv,
     iconColor: "Primary",

@@ -34,7 +34,7 @@ const componentStyles = (theme) => ({
   },
   bgInfoLight: {
     backgroundColor: theme.palette.info.light,
-  },
+  }
 });
 
 export default componentStyles;

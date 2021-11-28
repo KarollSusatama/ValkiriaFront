@@ -60,7 +60,7 @@ const themeColors = {
     badge: "#03acca",
   },
   background: {
-    default: "#CC86C2",
+    default: "#FFFDFE",
   },
   text: {
     primary: "#525f7f",
