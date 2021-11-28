@@ -11,7 +11,7 @@ import ArrowUpward from "@material-ui/icons/ArrowUpward";
 import EmojiEvents from "@material-ui/icons/EmojiEvents";
 import GroupAdd from "@material-ui/icons/GroupAdd";
 import InsertChartOutlined from "@material-ui/icons/InsertChartOutlined";
-import PieChart from "@material-ui/icons/PieChart";
+import PieChart from "@material-ui/icons/PhoneAndroid";
 
 // core components
 import CardStats from "components/Cards/CardStats.js";
@@ -50,7 +50,7 @@ const Header = () => {
                   <Grid item xl={3} lg={6} xs={12}>
                     <CardStats
                       subtitle="Días para la menstruación"
-                      title="2,356"pp
+                      title="20"pp
                       icon={PieChart}
                       color="bgError"
                       footer={
@@ -64,14 +64,13 @@ const Header = () => {
                             alignItems="center"
                           >
                             <Box
-                              component={ArrowDownward}
+                              // component={ArrowDownward}
                               width="1.5rem!important"
                               height="1.5rem!important"
                             />{" "}
-                            3.48%
+                            Recuerda tomarte las pastillas de placebo
                           </Box>
                           <Box component="span" whiteSpace="nowrap">
-                            Since last week
                           </Box>
                         </>
                       }
@@ -79,7 +78,7 @@ const Header = () => {
                   </Grid>
                   <Grid item xl={3} lg={6} xs={12}>
                     <CardStats
-                      subtitle="Días para la ovular"
+                      subtitle="Días no fertiles"
                       title="2,356"
                       icon={PieChart}
                       color="bgWarning"
@@ -109,7 +108,7 @@ const Header = () => {
                   </Grid>
                   <Grid item xl={3} lg={6} xs={12}>
                     <CardStats
-                      subtitle="Días no fertiles"
+                      subtitle="Días fertiles"
                       title="924"
                       icon={GroupAdd}
                       color="bgWarningLight"
